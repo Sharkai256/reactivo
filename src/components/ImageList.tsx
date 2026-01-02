@@ -1,14 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Image from "./Image";
 
 interface Props {
 	images: string[]
 	children: string
-	onClick: (index: string) => void
+	// onClick: (index: string) => void
 }
 
-const ImageList = ({images, children: title, onClick}: Props) => {
-	const [selectedIndex, setSelectedIndex] = useState(-1);
+const ImageList = ({images, children: title/* , onClick */}: Props) => {
+	// const [selectedIndex, setSelectedIndex] = useState(-1);
+	// let [dimensions, setDimensions] = useState(100)
 
 	// const imgList = images.map((item, index) => <img
 	// 	key={index}
@@ -22,24 +23,23 @@ const ImageList = ({images, children: title, onClick}: Props) => {
 
 	const imgList = images.map((item, index) => <Image
 		src={item}
-		height="100px"
-		width="100px"
+		// height={dimensions}
+		// width={dimensions}
 		key={index}
-		className={selectedIndex == index ? "list-group-item active" : "list-group-item"}
-		onClick={() => {
+		// className={selectedIndex == index ? "list-group-item active" : "list-group-item"}
+		className="img"
+		/* onClick={() => {
 			setSelectedIndex(index)
 			onClick(item)
-	}}></Image>)
+		}} */></Image>)
 
 	return <>
 		<h1>{title}</h1>
 		<ul className="list-group">
 			{imgList}
 		</ul>
-		<h6>
-			<br></br>
-			click on image for the effect
-		</h6>
+		<br></br>
+		<h6>click on images</h6>
 	</>
 }
 
