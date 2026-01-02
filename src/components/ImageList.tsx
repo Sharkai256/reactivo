@@ -1,29 +1,38 @@
 import { useState } from "react";
+import Image from "./Image";
 
 interface Props {
-	items: string[]
+	images: string[]
 	children: string
-	onItemSelect: (item: string) => void
+	onClick: (index: string) => void
 }
 
-const ImageList = ({items, children, onItemSelect: onSelectItem}: Props) => {
-	//TODO: make a list with images; buttons that swipes them *(and changes index logo); add onClick with wobbling;
+const ImageList = ({images, children: title, onClick}: Props) => {
+	const [selectedIndex, setSelectedIndex] = useState(-1);
 
-	const [imgIndex, setImgIndex] = useState(-1);
+	// const imgList = images.map((item, index) => <img
+	// 	key={index}
+	// 	onClick={() => {
+	// 		setImgIndex(index)
+	// 		onSelectItem(item)
+	// 	}}
+	// 	className={imgIndex == index ? "list-group-item active" : "list-group-item"}
+	// 	src={item}>
+	// 	</img>);
 
-	const imgList = items.map((item, index) => <li
+	const imgList = images.map((item, index) => <Image
+		src={item}
+		height="100px"
+		width="100px"
 		key={index}
+		className={selectedIndex == index ? "list-group-item active" : "list-group-item"}
 		onClick={() => {
-			setImgIndex(index)
-			onSelectItem(item)
-		}}
-		className={
-			imgIndex == index ? "list-group-item active" : "list-group-item"
-		}>{item}
-	</li>);
+			setSelectedIndex(index)
+			onClick(item)
+	}}></Image>)
 
 	return <>
-		<h1>{children}</h1>
+		<h1>{title}</h1>
 		<ul className="list-group">
 			{imgList}
 		</ul>
