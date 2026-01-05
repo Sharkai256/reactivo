@@ -8,6 +8,8 @@
 	height: 100vh;
 	background-color: var(--background-color);
 	color: var(--text-color);
+	transition-property: var(--background-color);
+	transition-duration: 0.3s;
 }
 
 [color-theme="dark"] {
@@ -17,4 +19,22 @@
 
 img {
 	border-radius: 5%;
+	transition-property: "src";
+	transition-duration: 0.1s;
+}
+
+/* .inner {
+	border: 0.05em solid black;
+} */
+
+.outer {
+	/* border: 0.05em solid red; */
+	display: flex;
+	justify-content: center;
+}
+
+.toggle {
+	position: absolute;
+	right: 100px;
+	/* border: 0.5px solid rgb(76, 93, 93); */
 }

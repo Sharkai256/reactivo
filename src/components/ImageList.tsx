@@ -4,10 +4,11 @@ import Image from "./Image";
 interface Props {
 	images: string[]
 	children: string
+	className?: string
 	// onClick: (index: string) => void
 }
 
-const ImageList = ({images, children: title/* , onClick */}: Props) => {
+const ImageList = ({images, children: title, className/* , onClick */}: Props) => {
 	// const [selectedIndex, setSelectedIndex] = useState(-1);
 	// let [dimensions, setDimensions] = useState(100)
 
@@ -33,14 +34,14 @@ const ImageList = ({images, children: title/* , onClick */}: Props) => {
 			onClick(item)
 		}} */></Image>)
 
-	return <>
+	return <div className={className}>
 		<h1>{title}</h1>
 		<ul className="list-group">
 			{imgList}
 		</ul>
 		<br></br>
-		<h6>click on images</h6>
-	</>
+		<h6>click them</h6>
+	</div>
 }
 
 export default ImageList;

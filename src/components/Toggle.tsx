@@ -5,12 +5,11 @@ interface Props {
 }
 
 const Toggle = ({ theme, onChange, className}: Props) => {
-	return <label>
+	return <label className={className}>
 				<input
 				type="checkbox"
 				checked={theme == true}
 				onChange={onChange}
-				className={className}
 				></input>
 				use dark mode
 			</label>
