@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import ImageList from "./components/ImageList";
 import Toggle from "./components/Toggle"
-// import Button from "./components/Button";
+import Button from "./components/Button";
 // import { ErrorBoundary } from "react-error-boundary";
 import './App.css'
 
@@ -27,15 +27,16 @@ const App = () => {
 	// document.documentElement.style.setProperty('--body-bg-color', theme);
 
 	const images = [
-		"/icon.png",
-		"/icon.png",
+		["/mavi_1.png", "/mavi_2.png", "/terraria_fem_hit.mp3"],
+		["/bn_4.png", "/bn_2.png", "/hit.mp3"],
+		["/rivulet_2.png", "/rivulet_1.png", "/pluh.mp3"]
 	];
 
 	// const handleSelect = (item: string) => console.log(item)
 	return	<div className="main outer" color-theme={darkTheme ? "dark" : "white"} /* style={{backgroundColor: theme}} */>
 				<ImageList
 				images={images}
-				// className={"inner"}
+				className={"inner"}
 				/* onClick={handleSelect} */>
 					Silly images
 				</ImageList>
@@ -51,7 +52,7 @@ const App = () => {
 				</label> */}
 				<Toggle theme={darkTheme} className="toggle" onChange={() => setTheme(!darkTheme)}></Toggle>
 				{/* {alertVisibility && <Alert onClose={() => setAlertVisibility(false)}>wow alert!</Alert>} */}
-				{/* <Button color="primary" onClick={() => setAlertVisibility(true)}>activate alert</Button> */}
+				<Button className="evil" sound="/evil_laugh.mp3">magick button</Button>
 			</div>
 	// return <Image src="/icon.png" height="100px"></Image>
 }

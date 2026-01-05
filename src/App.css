@@ -19,13 +19,19 @@
 
 img {
 	border-radius: 5%;
+	margin-top: 5%;
 	transition-property: "src";
 	transition-duration: 0.1s;
 }
 
-/* .inner {
-	border: 0.05em solid black;
-} */
+button {
+	border-radius: 5%;
+}
+
+.inner {
+	/* border: 0.05em solid black; */
+	margin-top: 5%;
+}
 
 .outer {
 	/* border: 0.05em solid red; */
@@ -35,6 +41,13 @@ img {
 
 .toggle {
 	position: absolute;
-	right: 100px;
+	margin-left: 80%;
+	margin-top: 5%;
 	/* border: 0.5px solid rgb(76, 93, 93); */
+}
+
+.evil {
+	position: absolute;
+	margin-left: 80%;
+	margin-top: 10%;
 }
