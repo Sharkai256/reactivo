@@ -4,13 +4,11 @@ interface Props {
 	children: string
 	className: string
 	sound: string
-	/* color: string
-	onClick: () => void */
 }
 
-const Button = ({children: text, className, sound /* color, onClick */}: Props) => {
-	const audio = new Audio(sound)
-	audio.volume = 0.25
+const Button = ({children: text, className, sound}: Props) => {
+	const audio = new Audio(sound);
+	audio.volume = 0.25;
 
 	const [scope, animate] = useAnimate();
 
@@ -22,18 +20,17 @@ const Button = ({children: text, className, sound /* color, onClick */}: Props) 
 	];
 
 	useEffect(() => {
-		animate(sequence)
-		const repeatInterval = setInterval(() => animate(sequence), 2500)
+		animate(sequence);
+		const repeatInterval = setInterval(() => animate(sequence), 2500);
 	}, [])
 
-	return <div ref={scope} className={className}><motion.button
-		type="button"
-		// className={"btn btn-" + color}
-		onClick={() => audio.play()}
-		// onClick={SequenceAnimation}
-		>
+	return <div ref={scope} className={className}>
+		<motion.button
+			type="button"
+			onClick={() => audio.play()}>
 			<strong>{text}</strong>
-	</motion.button></div>
+		</motion.button>
+	</div>
 }
 
 export default Button;

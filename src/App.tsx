@@ -1,9 +1,7 @@
-// import Alert from "./components/Alert";
 import { useState, useEffect } from "react";
 import ImageList from "./components/ImageList";
 import Toggle from "./components/Toggle"
 import Button from "./components/Button";
-// import { ErrorBoundary } from "react-error-boundary";
 import './App.css'
 
 const persistedState = (key: string, defaultValue: boolean) => {
@@ -20,41 +18,23 @@ const persistedState = (key: string, defaultValue: boolean) => {
 }
 
 const App = () => {
-	// let [theme, setTheme] = useState(false)
-	let [darkTheme, setTheme] = persistedState("darkTheme", false)
-
-	// const [alertVisibility, setAlertVisibility] = useState(false);
-	// document.documentElement.style.setProperty('--body-bg-color', theme);
+	let [darkTheme, setTheme] = persistedState("darkTheme", false);
 
 	const images = [
-		["/mavi_1.png", "/mavi_2.png", "/terraria_fem_hit.mp3"],
-		["/bn_4.png", "/bn_2.png", "/hit.mp3"],
-		["/rivulet_2.png", "/rivulet_1.png", "/pluh.mp3"]
+		["src/assets/img/mavi_1.png", "src/assets/img/mavi_2.png", "src/assets/sfx/terraria_fem_hit.mp3"],
+		["src/assets/img/bn_4.png", "src/assets/img/bn_2.png", "src/assets/sfx/hit.mp3"],
+		["src/assets/img/rivulet_2.png", "src/assets/img/rivulet_1.png", "src/assets/sfx/pluh.mp3"]
 	];
 
-	// const handleSelect = (item: string) => console.log(item)
-	return	<div className="main outer" color-theme={darkTheme ? "dark" : "white"} /* style={{backgroundColor: theme}} */>
-				<ImageList
-				images={images}
-				className={"inner"}
-				/* onClick={handleSelect} */>
-					Silly images
-				</ImageList>
-				{/* <label>
-					<input
-					type="checkbox"
-					checked={theme == true}
-					onChange={(e) => {
-						setTheme(e.target.checked ? true : false)
-					}}
-					></input>
-					use dark mode
-				</label> */}
-				<Toggle theme={darkTheme} className="toggle" onChange={() => setTheme(!darkTheme)}></Toggle>
-				{/* {alertVisibility && <Alert onClose={() => setAlertVisibility(false)}>wow alert!</Alert>} */}
-				<Button className="evil" sound="/evil_laugh.mp3">magick button</Button>
-			</div>
-	// return <Image src="/icon.png" height="100px"></Image>
+	return	<div className="main outer" color-theme={darkTheme ? "dark" : "white"}>
+		<ImageList
+			images={images}
+			className={"inner"}>
+			Silly images
+		</ImageList>
+		<Toggle theme={darkTheme} className="toggle" onChange={() => setTheme(!darkTheme)}></Toggle>
+		<Button className="evil" sound="src/assets/sfx/evil_laugh.mp3">magick button</Button>
+	</div>
 }
 
 export default App;
