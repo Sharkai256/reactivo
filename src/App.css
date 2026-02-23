@@ -28,12 +28,27 @@ button {
 	border-radius: 5%;
 }
 
-.inner {
-	margin-top: 5%;
+.item {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: center;
+	align-items: center;
+	width: 750px;
+	height: 100px;
+}
+
+.item img {
+	width: 100px;
+}
+
+.item p {
+	width: 500px;
+	color: var(--text-color);
+	padding: 10px;
 }
 
 .outer {
-	display: flex;
+	display: grid;
 	justify-content: center;
 }
 
