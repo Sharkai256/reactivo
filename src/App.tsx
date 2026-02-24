@@ -21,15 +21,27 @@ const App = () => {
 	return	<div className="main outer" color-theme={darkTheme ? "dark" : "white"}>
 		<div className="item">
 			<img src="./src/assets/img/mavi_1.png"/>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</p>
+			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
 		</div>
 		<div className="item">
 			<img src="./src/assets/img/rivulet_1.png"/>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</p>
+			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
 		</div>
 		<div className="item">
 			<img src="./src/assets/img/bn_2.png"/>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</p>
+			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
+		</div>
+		<div className="item">
+			<img src="./src/assets/img/mavi_2.png"/>
+			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
+		</div>
+		<div className="item">
+			<img src="./src/assets/img/rivulet_2.png"/>
+			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
+		</div>
+		<div className="item">
+			<img src="./src/assets/img/bn_4.png"/>
+			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
 		</div>
 		<Toggle theme={darkTheme} className="toggle" onChange={() => setTheme(!darkTheme)}></Toggle>
 	</div>
