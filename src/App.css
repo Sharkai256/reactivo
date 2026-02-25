@@ -1,32 +1,25 @@
-:root {
-	--background-color: rgb(255, 255, 255);
-	--text-color: rgb(0, 0, 0);
+#root {
+	--background-color: rgb(25, 25, 25);
+	--text-color: rgb(255, 255, 255);
+	background-color: var(--background-color);
+	color: var(--text-color);
 }
 
 .main {
-	width: 100%;
-	height: 100%;
+	--background-color: rgb(255, 255, 255);
+	--text-color: rgb(0, 0, 0);
 	background-color: var(--background-color);
 	color: var(--text-color);
 	transition-property: var(--background-color);
 	transition-duration: 0.3s;
+	width: 100%;
+	height: 100%;
 	padding: 100px;
 }
 
 [color-theme="dark"] {
-	--background-color: rgb(26, 26, 26);
+	--background-color: rgb(25, 25, 25);
 	--text-color: rgb(255, 255, 255);
-}
-
-img {
-	border-radius: 5%;
-	margin-top: 5%;
-	transition-property: "src";
-	transition-duration: 0.1s;
-}
-
-button {
-	border-radius: 5%;
 }
 
 .item {
@@ -58,10 +51,4 @@ button {
 	position: absolute;
 	margin-left: 80%;
 	margin-top: 5%;
-}
-
-.evil {
-	position: absolute;
-	margin-left: 80%;
-	margin-top: 10%;
 }

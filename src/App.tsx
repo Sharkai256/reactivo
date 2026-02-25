@@ -1,50 +1,30 @@
-import { useState, useEffect } from "react";
-import Toggle from "./components/Toggle"
+import { useState, useEffect, Activity } from "react";
+import ToggleTheme from "./components/ToggleTheme"
 import './App.css'
-
-const persistedState = (key: string, defaultValue: boolean) => {
-	const [state, setState] = useState(() => {
-		const storedValue = localStorage.getItem(key);
-		return storedValue ? JSON.parse(storedValue) : defaultValue;
-  	});
-
-	useEffect(() => {
-		localStorage.setItem(key, JSON.stringify(state));
-	}, [key, state]);
-
-	return [state, setState];
-}
+import ItemList from "./components/ItemList";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
-	let [darkTheme, setTheme] = persistedState("darkTheme", false);
+	const [darkTheme, setDarkTheme] = useState(() => {
+		const storedValue = localStorage.getItem("darkTheme");
+		return storedValue ? JSON.parse(storedValue) : false;
+	});
 
-	return	<div className="main outer" color-theme={darkTheme ? "dark" : "white"}>
-		<div className="item">
-			<img src="./src/assets/img/mavi_1.png"/>
-			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
-		</div>
-		<div className="item">
-			<img src="./src/assets/img/rivulet_1.png"/>
-			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
-		</div>
-		<div className="item">
-			<img src="./src/assets/img/bn_2.png"/>
-			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
-		</div>
-		<div className="item">
-			<img src="./src/assets/img/mavi_2.png"/>
-			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
-		</div>
-		<div className="item">
-			<img src="./src/assets/img/rivulet_2.png"/>
-			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
-		</div>
-		<div className="item">
-			<img src="./src/assets/img/bn_4.png"/>
-			<h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi rem fuga veniam magni. Molestiae rem vitae eos ipsa distinctio tenetur officiis suscipit. Molestias, repudiandae quis atque amet consectetur delectus cupiditate.</h6>
-		</div>
-		<Toggle theme={darkTheme} className="toggle" onChange={() => setTheme(!darkTheme)}></Toggle>
-	</div>
+	useEffect(() => {
+		localStorage.setItem("darkTheme", JSON.stringify(darkTheme));
+	}, ["darkTheme", darkTheme]);
+
+	return (
+		<>
+			<Activity mode={darkTheme ? "visible" : "hidden"}>
+				<Sidebar></Sidebar>
+			</Activity>
+			<div className="main outer" color-theme={darkTheme ? "dark" : "white"}>
+				<ItemList></ItemList>
+				<ToggleTheme theme={darkTheme} className="toggle" onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
+			</div>
+		</>
+	)
 }
 
 export default App;

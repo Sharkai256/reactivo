@@ -4,7 +4,7 @@ interface Props {
 	className?: string
 }
 
-const Toggle = ({ theme, onChange, className}: Props) => {
+const ToggleTheme = ({ theme, onChange, className}: Props) => {
 	return <label className={className}>
 		<input
 			type="checkbox"
@@ -15,4 +15,4 @@ const Toggle = ({ theme, onChange, className}: Props) => {
 	</label>
 }
 
-export default Toggle;
+export default ToggleTheme;
