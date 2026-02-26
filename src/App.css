@@ -1,9 +1,6 @@
-#root {
-	--background-color: rgb(25, 25, 25);
-	--text-color: rgb(255, 255, 255);
-	background-color: var(--background-color);
-	color: var(--text-color);
-}
+/* #root {
+
+} */
 
 .main {
 	--background-color: rgb(255, 255, 255);
@@ -17,7 +14,7 @@
 	padding: 100px;
 }
 
-[color-theme="dark"] {
+.dark {
 	--background-color: rgb(25, 25, 25);
 	--text-color: rgb(255, 255, 255);
 }

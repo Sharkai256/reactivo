@@ -14,14 +14,17 @@ const App = () => {
 		localStorage.setItem("darkTheme", JSON.stringify(darkTheme));
 	}, ["darkTheme", darkTheme]);
 
+	let [sideBar, setSideBar] = useState(false)
+
 	return (
 		<>
-			<Activity mode={darkTheme ? "visible" : "hidden"}>
+			<div className={`main outer ${darkTheme ? "dark" : "white"}`}>
+			<ToggleTheme theme={darkTheme} className={`toggle ${darkTheme ? "dark" : "white"}`} onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
+			<button onClick={() => setSideBar(!sideBar)}>Toggle sidebar</button>
+			<Activity mode={sideBar ? "visible" : "hidden"}>
 				<Sidebar></Sidebar>
 			</Activity>
-			<div className="main outer" color-theme={darkTheme ? "dark" : "white"}>
 				<ItemList></ItemList>
-				<ToggleTheme theme={darkTheme} className="toggle" onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
 			</div>
 		</>
 	)
