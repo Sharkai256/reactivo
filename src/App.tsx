@@ -20,7 +20,7 @@ const App = () => {
 		<>
 			<div className={`main outer ${darkTheme ? "dark" : "white"}`}>
 			<ToggleTheme theme={darkTheme} className={`toggle ${darkTheme ? "dark" : "white"}`} onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
-			<button onClick={() => setSideBar(!sideBar)}>Toggle sidebar</button>
+			<button className="sBarToggle" onClick={() => setSideBar(!sideBar)}>Toggle sidebar</button>
 			<Activity mode={sideBar ? "visible" : "hidden"}>
 				<Sidebar></Sidebar>
 			</Activity>
