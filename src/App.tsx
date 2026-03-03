@@ -19,11 +19,14 @@ const App = () => {
 	return (
 		<>
 			<div className={`main outer ${darkTheme ? "dark" : "white"}`}>
-			<ToggleTheme theme={darkTheme} className={`toggle ${darkTheme ? "dark" : "white"}`} onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
-			<button className="sBarToggle" onClick={() => setSideBar(!sideBar)}>Toggle sidebar</button>
-			<Activity mode={sideBar ? "visible" : "hidden"}>
-				<Sidebar></Sidebar>
-			</Activity>
+				<div>
+					<button className="sBarToggle" onClick={() => setSideBar(!sideBar)}>Toggle sidebar</button>
+					<Activity mode={sideBar ? "visible" : "hidden"}>
+						<Sidebar></Sidebar>
+					</Activity>
+				</div>
+				<div></div>
+				<ToggleTheme theme={darkTheme} className={`toggle ${darkTheme ? "dark" : "white"}`} onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
 				<ItemList></ItemList>
 			</div>
 		</>
