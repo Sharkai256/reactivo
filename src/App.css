@@ -17,14 +17,12 @@
 
 .item {
 	display: grid;
-	/* grid-template-columns: auto auto; */
 	align-items: center;
 
 	grid-template-columns: 1fr 2fr;
 	grid-template-rows: 1fr;
 	margin-right: 30%;
 	margin-bottom: 2%;
-	/* grid-column-gap: 10px; */
 }
 
 .item img {
@@ -32,7 +30,6 @@
 }
 
 .item h6 {
-	/* max-width: 500px; */
 	color: var(--text-color);
 }
 
@@ -41,13 +38,12 @@
 	height: auto;
 	width: auto;
 	justify-content: center;
-	grid-template-columns: 0.5fr 2fr 0.5fr;
-	grid-template-rows: 0.3fr 1fr;
-	grid-column-gap: 10px;
+
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 1fr;
 }
 
 .sBarToggle {
 	border-radius: 5px;
 	width: 125px;
-	/* margin-left: -45%; */
 }

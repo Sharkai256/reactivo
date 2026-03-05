@@ -25,9 +25,11 @@ const App = () => {
 						<Sidebar></Sidebar>
 					</Activity>
 				</div>
-				<div></div>
+				<div>
+					<ItemList></ItemList>
+					<ItemList></ItemList>
+				</div>
 				<ToggleTheme theme={darkTheme} className={`toggle ${darkTheme ? "dark" : "white"}`} onChange={() => setDarkTheme(!darkTheme)}></ToggleTheme>
-				<ItemList></ItemList>
 			</div>
 		</>
 	)
